@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:outputText value="Number Guess!" style="font-size:50px;"/><br/><br/>
+        <h:form>
+            <h:commandButton rendered="${helloBean.startGameButton}" value="Start Game" action="${helloBean.startGame()}"/>
+        </h:form>
+        <h:outputText style="color:${helloBean.minGuessesColor}" value="${helloBean.minGuesses}"/>&nbsp;&nbsp;    
+        <h:outputText style="color:${helloBean.maxGuessesColor}" value="${helloBean.maxGuesses}"/>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:inputText rendered="${helloBean.inputBox}" value="${helloBean.userGuess}"></h:inputText>
+                <h:commandButton rendered="${helloBean.inputButton}" value="Guess" action="${helloBean.checkGuess()}"/>
+                <h:outputText rendered="${helloBean.winMessageV}" value="${helloBean.winMessage}"/>
+                <h:outputText value="${helloBean.randomNum}"/>
+                <h:commandButton  rendered="${helloBean.quitButton}" value="Quit" action="${helloBean.quit()}"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
